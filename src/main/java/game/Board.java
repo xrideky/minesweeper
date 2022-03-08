@@ -1,6 +1,7 @@
 package game;
 
 import game.tiles.Empty;
+import game.tiles.MineRevealedException;
 import game.tiles.Tile;
 
 public class Board {
@@ -37,5 +38,9 @@ public class Board {
         }
 
         return builder.toString();
+    }
+
+    public void reveal(Move move) throws MineRevealedException {
+        this.board[move.y][move.x].reveal();
     }
 }
